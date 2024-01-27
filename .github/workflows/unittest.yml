@@ -2,7 +2,7 @@ name: Unittest Coverage
 on: push
 
 jobs:
-  lint:
+  unittest:
     runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v2
@@ -14,3 +14,9 @@ jobs:
       run: pip install -r requirements.txt
     - name: Run Unittests
       run: pytest --cov=./src --cov-report html:coverage-report
+    - name: Archive coverage artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage report
+        path: |
+          coverage-report
