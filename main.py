@@ -8,7 +8,7 @@ instrumentator.instrument(app).expose(app)
 
 
 @app.get("/health", status_code=status.HTTP_200_OK)
-def health():
+def health() -> dict[str, str]:
     return {"status": "ok"}
 
 

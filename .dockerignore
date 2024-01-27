@@ -8,3 +8,5 @@ unittests.html
 venv
 env
 .git
+.mypy_cache
+mypy-report
