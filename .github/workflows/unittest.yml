@@ -1,0 +1,16 @@
+name: Unittest Coverage
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+    - name: Install packages
+      run: pip install -r requirements.txt
+    - name: Run Unittests
+      run: pytest --cov=./src --cov-report html:coverage-report

@@ -1,0 +1,11 @@
+pytest
+pytest-cov
+pytest-html
+pytest-metadata
+prometheus-fastapi-instrumentator
+tqdm
+pydantic
+ruff
+pyarrow
+uvicorn
+fastapi

@@ -1,0 +1,10 @@
+.vscode
+docstring
+venv
+*.md
+unittests.html
+.gitignore
+.ruff.toml
+venv
+env
+.git
