@@ -1,5 +1,7 @@
 # python-toolkit
 
+Requires Python >= 3.12
+
 ```
 where python
 ```
