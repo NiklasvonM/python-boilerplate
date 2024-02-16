@@ -2,7 +2,7 @@
 exclude_dirs = ["src/tests"]
 
 [tool.mypy]
-disallow_any_explicit = False
+disallow_any_explicit = false
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
