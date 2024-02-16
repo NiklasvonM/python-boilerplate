@@ -1,4 +1,4 @@
-FROM python:3.11.7-bullseye as builder
+FROM python:3.12.2-bullseye as builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN pip install --target=/install -r requirements.txt
 
 COPY . .
 
-FROM python:3.11.7-bullseye
+FROM python:3.12.2-bullseye
 
 COPY --from=builder /install /usr/local/lib/python3.11/site-packages
 COPY --from=builder /app /app
