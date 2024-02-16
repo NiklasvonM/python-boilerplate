@@ -1,5 +1,5 @@
 [tool.bandit]
-exclude_dirs = ["src/tests"]
+exclude_dirs = ["tests", "venv", ".venv"]
 
 [tool.mypy]
 disallow_any_explicit = false

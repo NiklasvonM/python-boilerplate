@@ -13,3 +13,4 @@ pytest-metadata==3.0.0
 ruff==0.1.14
 tqdm==4.66.1
 uvicorn==0.27.0
+bandit==1.7.7
