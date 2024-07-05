@@ -7,7 +7,7 @@
       "datefmt": "%Y-%m-%dT%H:%M:%S%z"
     },
     "json": {
-      "()": "src.util.mylogger.MyJSONFormatter",
+      "()": "python_boilerplate.util.mylogger.MyJSONFormatter",
       "fmt_keys": {
         "level": "levelname",
         "message": "message",

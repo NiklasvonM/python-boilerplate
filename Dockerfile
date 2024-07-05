@@ -1,18 +1,29 @@
+# Taken from https://medium.com/@albertazzir/blazing-fast-python-docker-builds-with-poetry-a78a66f5aed0
+
 FROM python:3.12.2-bullseye as builder
+
+RUN pip install poetry==1.8.2
+
+ENV POETRY_NO_INTERACTION=1 \
+    POETRY_VIRTUALENVS_IN_PROJECT=1 \
+    POETRY_VIRTUALENVS_CREATE=1 \
+    POETRY_CACHE_DIR=/tmp/poetry_cache
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --target=/install -r requirements.txt
+COPY pyproject.toml poetry.lock ./
+RUN touch README.md
 
-COPY . .
+# Don't install the developed app to better make use of the Docker's caching
+RUN --mount=type=cache,target=$POETRY_CACHE_DIR poetry install --without dev --no-root
 
-FROM python:3.12.2-bullseye
+FROM python:3.12.2-bullseye as runtime
 
-COPY --from=builder /install /usr/local/lib/python3.12/site-packages
-COPY --from=builder /app /app
+ENV VIRTUAL_ENV=/app/.venv \
+    PATH="/app/.venv/bin:$PATH"
 
-ENV PYTHONPATH=/app
+COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 
-EXPOSE 8000
-CMD ["python", "main.py"]
+COPY python_boilerplate ./python_boilerplate
+
+CMD ["python", "-m", "python_boilerplate.main"]
