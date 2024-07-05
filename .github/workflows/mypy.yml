@@ -10,10 +10,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.12'
+    - name: Install Poetry
+      run: pip install poetry
     - name: Install packages
-      run: pip install -r requirements.txt
+      run: poetry install
     - name: Run Mypy
-      run: mypy . --html-report mypy-report
+      run: poetry run mypy . --html-report mypy-report
     - name: Archive coverage artifacts
       uses: actions/upload-artifact@v4
       with:

@@ -12,6 +12,7 @@ Most of the tools used should work with Python >= 3.8. However, the logging requ
 
 ## Tools
 
+- [Poetry](https://python-poetry.org/) as the build tools instead of pip
 - CI Pipeline for GitHub including:
   - [Ruff](https://github.com/astral-sh/ruff): fast linter and formatter, replacing [Pylint](https://github.com/pylint-dev/pylint)/[Flake8](https://github.com/PyCQA/flake8) and [Black](https://github.com/psf/black)
   - [Pytest](https://github.com/pytest-dev/pytest): unit tests
@@ -32,4 +33,4 @@ This boilerplate is structured to be downloaded and adapted according to the spe
 
 ## Note
 
-While this boilerplate is crafted with personal preferences and experiences in mind, it is open for adaptation and contributions. The intention is to provide a versatile starting point that can be customized to fit a variety of Python projects, promoting best practices and efficient development processes.
+While this boilerplate is crafted with personal preferences and experiences in mind, it is open for adaptation and contributions. The intention is to provide a starting point that can be customized to fit a variety of Python projects, promoting best practices and efficient development processes.
