@@ -14,4 +14,4 @@ jobs:
     - name: Install Bandit
       run: pip install bandit
     - name: Run Bandit
-      run: bandit -c pyproject.toml -r python_boilerplate
+      run: bandit -c pyproject.toml -r python-boilerplate/src

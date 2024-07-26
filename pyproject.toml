@@ -5,7 +5,7 @@ description = "Comprehensive Python boilerplate toolkit"
 authors = ["Niklas von Moers <niklasvmoers@protonmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "python_boilerplate" }]
+packages = [{ include = "python_boilerplate", from = "python-boilerplate/src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
