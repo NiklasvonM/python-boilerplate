@@ -12,9 +12,10 @@ Most of the tools used should work with Python >= 3.8. However, the logging requ
 
 ## Tools
 
-- [Poetry](https://python-poetry.org/) as the build tools instead of pip
+- [Poetry](https://python-poetry.org/) as the build tool and package manager instead of pip
 - CI Pipeline for GitHub including:
   - [Ruff](https://github.com/astral-sh/ruff): fast linter and formatter, replacing [Pylint](https://github.com/pylint-dev/pylint)/[Flake8](https://github.com/PyCQA/flake8) and [Black](https://github.com/psf/black)
+    - Including a pre-commit hook that auto-formats your code. To use it, install the Python package `pre-commit` (which is listed a dev dependency in pyproject.toml and will hence automatically be installed if you run `poetry install`) and run `pre-commit install`.
   - [Pytest](https://github.com/pytest-dev/pytest): unit tests
   - [Mypy](https://github.com/python/mypy): static type checker
   - [Bandit](https://github.com/PyCQA/bandit): security
